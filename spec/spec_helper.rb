@@ -1,4 +1,4 @@
-require_relative '../lib/prime_number'
+require_relative '../lib/prime_number_calc'
 
 RSpec.configure do |config|
   config.tty = true
