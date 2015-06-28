@@ -17,10 +17,10 @@ class PrimeNumberCalc
     table = {}
 
     prime_numbers.each do |prime_number_to_multiply|
-      multiplications = []
+      multiplications = {}
 
       prime_numbers.each do |prime_number|
-        multiplications << prime_number_to_multiply * prime_number
+        multiplications[prime_number] = prime_number_to_multiply * prime_number
       end
 
       table[prime_number_to_multiply] = multiplications
