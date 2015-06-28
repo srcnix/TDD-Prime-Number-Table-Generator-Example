@@ -7,6 +7,14 @@ describe 'bin/prime_numbers.rb command line tool' do
     expect(stdout).to match("-m, --maximum MAXIMUM            Maximum prime numbers to calculate table against")
   end
 
+  it 'should return warning if --maximum is 0 (non numeric)' do
+    stdout_nil    = capture('ruby ./bin/prime_numbers.rb')
+    stdout_alpha  = capture('ruby ./bin/prime_numbers.rb --maximum Ten')
+
+    expect(stdout_nil).not_to match('Warning: Using 5 for maximum as provided option is not a number')
+    expect(stdout_alpha).to match('Warning: Using 5 for maximum as provided option is not a number')
+  end
+
   it 'should output multiplication table' do
     stdout = capture('ruby ./bin/prime_numbers.rb')
     expected_output = "  +----+----+----+----+----+-----+\n" +
