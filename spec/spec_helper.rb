@@ -19,6 +19,12 @@
 require_relative '../lib/prime_number'
 
 RSpec.configure do |config|
+
+   # Use color not only in STDOUT but also in pagers and files
+   config.tty = true
+
+   # Use the specified formatter
+   config.formatter = :documentation
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
