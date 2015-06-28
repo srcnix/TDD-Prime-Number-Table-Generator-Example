@@ -1,3 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'rspec'
+gem 'formatador'
+
+group :test, :development do
+  gem 'rspec'
+end
